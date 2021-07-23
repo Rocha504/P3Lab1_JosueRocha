@@ -26,7 +26,6 @@ int main(int argc, char** argv) {
 			cin>>x;
 			sigmoide(x);
 		}
-	
 	return 0;
 }
 	int menu(){
