@@ -6,7 +6,8 @@ using std::endl;
 
 
 int menu();
-
+void sumatoria(int);
+void sigmoide(double);
 
 int main(int argc, char** argv) {
 	
@@ -14,27 +15,16 @@ int main(int argc, char** argv) {
 	op=menu();
 	if(op==1){
 		int n;
-		double acum=0;
 		cout<<"Ingrese un valor"<<endl;
 		cin>>n;
-		for(int i=1;i<=n;i++){
-			double aux1=2*i-1;
-			double aux2=i*(i+1);
-			double aux3=aux1/aux2;
-			acum+=aux3;  
-		}
-		cout<<acum<<endl;	
+		sumatoria(n); 	
 	}	
 	 else
 		if(op==2){
 			double x;
-			double sig;
 			cout<<"ingrese un valor"<<endl;
 			cin>>x;
-			double aux1=1;
-			double aux2=1+exp(x);
-			sig=aux1/aux2;
-			cout<<sig<<endl;
+			sigmoide(x);
 		}
 	
 	return 0;
@@ -47,4 +37,23 @@ int main(int argc, char** argv) {
 		cin>>op;
 		return op;
 	}
-	 
+	void sumatoria(int n){
+
+		double acum=0;
+		for(int i=1;i<=n;i++){
+			double aux1=2*i-1;
+			double aux2=i*(i+1);
+			double aux3=aux1/aux2;
+			acum+=aux3;  
+		}
+		cout<<acum<<endl;
+		
+	}
+
+	void sigmoide(double x){
+			double sig;
+			double aux1=1;
+			double aux2=1+exp(x);
+			sig=aux1/aux2;
+			cout<<sig<<endl;
+	}	 
